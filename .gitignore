@@ -1,0 +1,14 @@
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# emacs back-up files
+.#*
+.*~
+
+# Executables
+*.o
+*.mod
+calltarget
+ddscat
+ddpostprocess
+
