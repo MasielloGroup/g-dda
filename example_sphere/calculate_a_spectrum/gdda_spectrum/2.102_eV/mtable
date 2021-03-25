@@ -1,0 +1,9 @@
+ DDSCAT --- DDSCAT 7.3.2 [18.08.29]   
+ TARGET --- Sphere of radius 5 nm and dipole spacing 1 nm                     
+ PBCGS2 --- method of solution 
+ GKDLDR --- prescription for polarizabilities
+ FROM_FILE --- shape 
+    515 = NAT0 = number of dipoles
+ ../auJC.tab                                                 
+  wave(um)   f(cm-1)     Re(m)     Im(m)    Re(eps)   Im(eps)
+ 5.8990E-01 1.6952E+04 2.691E-01 2.958E+00-8.675E+00 1.592E+00
