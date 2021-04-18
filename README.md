@@ -21,3 +21,13 @@ To run the script, type `bash run_gdda.sh`. For a 5 nm radius sphere of 1 nm dip
 To run many scattering calculations to form an entire spectrum, see the Jupyter notebook and corresponding template files in the folder `calculate_a_spectrum`.
 * Step 1: Follow steps 1 and 2 from previous example.
 * Step 2: Follow instructions in Jupyter notebook.
+
+
+### A spectrum on supercomputer
+To run an entire spectrum on a supercomputer, I've provided some scripts in the folder `example_sphere/supercomputer_files`.
+* Step 1: Make a shape file.
+* Step 2: Edit `ddscat.par`.
+* Step 3: Edit lines 7-11 of `make_dirs.py` to define the energy or wavelength window of the calculation. This script will make `num` number of folders and  $int(num/howmany)$ number of launch files. The folders will be named after the wavelength / energy of the calculation.
+* Step 4: Look over `launch_temp.slurm` to double check the name of the job, time, and partition to see if that's what you'd like. Run `python make_dirs.py` to then make the folders and files.
+* Step 5: After double checking that everything was made correctly, submit the jobs by `bash submit_together.sh`.
+* Step 6: Once the calculations are all done, collect all the output files using `bash collect_cross_secs.sh`. To plot the results on your local computer, run `python seeSpectrum.py`.
