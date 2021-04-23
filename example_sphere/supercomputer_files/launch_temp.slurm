@@ -20,14 +20,14 @@ module load anaconda3_4.3.1
 
 #################################################
 
-array=( "-200" "200" "0" "0" )
+# array of calculations goes here # 
 
 #################################################
 
 for ((i=0;i<${#array[@]};++i)); do
     file=${array[i]}
     cd ${file}
-    /gscratch/chem/masiello_group/g-dda/ddscat &> ${file}_DDApump.out &
+    /gscratch/chem/masiello_group/g-dda/source_code/ddscat &> ${file}_DDApump.out &
     cd ..
 done; wait
 
