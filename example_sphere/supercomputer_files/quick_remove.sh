@@ -8,3 +8,4 @@ rm Spectrum
 rm tdda_input
 rm *.out
 rm launch_part*
+rm collect_cross_secs.sh

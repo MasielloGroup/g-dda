@@ -77,5 +77,19 @@ def make_submissionscripts(intermsof, start, finish, num, howmany):
 		new_launch.writelines(lines)
 		new_launch.close()
 
+	file = open(str('collect_cross_secs.sh'),'w')
+	file.write(str('#!/bin/bash') + '\n')
+	file.write(str('# Collect all the files and write it to a file named Spectrum') + '\n')
+	if intermsof == 'eV':
+		file.write(str('for i in *eV ;do') + '\n')
+	if intermsof == 'um':
+		file.write(str('for i in *um ;do') + '\n')
+	file.write('\t' + str('cd $i; cp qtable temp') + '\n')
+	file.write('\t' + str('sed -i -e "1,14d" temp') + '\n')
+	file.write('\t' + str('cat temp >>../Spectrum') + '\n')
+	file.write('\t' + str('rm temp') + '\n')
+	file.write('\t' + str('cd ../') + '\n')
+	file.write(str('done') + '\n')
+
 make_directories(intermsof=intermsof, start=start, finish=finish, num=num)
 make_submissionscripts(intermsof=intermsof, start=start, finish=finish, num=num,howmany=howmany)
